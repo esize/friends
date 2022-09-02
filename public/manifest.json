@@ -1,11 +1,12 @@
 {
-  "name": "Next.JS Progressive Web App",
-  "short_name": "Next PWA",
-  "theme_color": "#ffffff",
-  "background_color": "#004740",
+  "name": "WoolHome Friends",
+  "short_name": "Friends",
+  "description": "Check in on your flock from anywhere in the woold!",
+  "theme_color": "#747474",
+  "background_color": "#c4efff",
   "display": "fullscreen",
   "orientation": "portrait",
-  "scope": "/",
+  "scope": "evanwindows11:3000/",
   "start_url": "/",
   "icons": [
     {
@@ -48,6 +49,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "splash_pages": null
+  ]
 }
