@@ -6,7 +6,7 @@
   "background_color": "#c4efff",
   "display": "fullscreen",
   "orientation": "portrait",
-  "scope": "evanwindows11:3000/",
+  "scope": "/",
   "start_url": "/",
   "icons": [
     {

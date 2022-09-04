@@ -72,6 +72,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  flex-direction: row;
 
   max-width: 800px;
   margin-top: 3rem;
@@ -80,18 +81,25 @@
 .card {
   margin: 1rem;
   flex-basis: 45%;
-  padding: 1.5rem;
+  padding: 0.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
   border: 1px solid #747474;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
+  width: fill;
 }
 
 .card h3 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 0 0;
   font-size: 1.5rem;
+  float: right;
+}
+
+.profile {
+  border-radius: 50%;
+  float: left;
 }
 
 .card p {
@@ -102,6 +110,41 @@
 
 .logo {
   height: 1em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.columnImg {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: fit-content;
+  align-self: center;
+  height: 1;
+  margin-right: 12px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: flex-end;
+  flex: 3;
+  text-align: right;
+}
+
+.column p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: normal;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 600px) {
