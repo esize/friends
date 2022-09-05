@@ -1,0 +1,51 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #c4efff;
+  width: 100%;
+}
+
+.main {
+  margin-bottom: 5rem;
+  background-color: #b8edff;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.profile {
+  display: flex;
+  width: auto;
+  border-radius: 50%;
+}
+
+.div {
+  display: flex;
+  width: auto;
+  align-self: center;
+}
+
+.center {
+  display: flex;
+  margin-right: 5px;
+}
+
+.circle {
+  display: flex;
+  align-self: center;
+  border-radius: 50%;
+}
+
+.back {
+  align-self: center;
+  flex: 2;
+  width: fit-content;
+}

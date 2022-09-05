@@ -8,17 +8,19 @@ export default () => {
     <>
       {sheeplist.map((sheep) => {
         return (
-          <div className={styles.card}>
+          <div className={styles.card} key={sheep.name}>
             <Link href={sheep.name}>
               <div className={styles.row}>
                 <div className={styles.columnImg}>
-                  <Image
-                    src={'/profiles/' + sheep.name + '.jpg'}
-                    layout='responsive'
-                    width='50px'
-                    height='50px'
-                    className={styles.profile}
-                  />
+                  <div>
+                    <Image
+                      src={'/profiles/' + sheep.name + '.jpg'}
+                      layout='responsive'
+                      width='50px'
+                      height='50px'
+                      className={styles.profile}
+                    />
+                  </div>
                 </div>
                 <div className={styles.column}>
                   <h3>{sheep.name}</h3>

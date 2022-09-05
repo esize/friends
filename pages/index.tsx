@@ -18,7 +18,7 @@ export default function Home() {
         <h1 className={styles.title}>woolhome</h1>
 
         <div className={styles.grid}>
-          <LambList></LambList>
+          <LambList />
         </div>
       </main>
     </div>

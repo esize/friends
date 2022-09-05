@@ -35,8 +35,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["@types/node", "npm:17.0.4"],
+            ["@types/node", "npm:18.7.14"],
             ["@types/react", "npm:17.0.38"],
+            ["idb-keyval", "npm:6.2.0"],
             ["next", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:12.2.5"],
             ["next-pwa", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:5.5.4"],
             ["react", "npm:17.0.2"],
@@ -2618,7 +2619,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/glob", "npm:7.2.0"],
             ["@types/minimatch", "npm:5.1.2"],
-            ["@types/node", "npm:18.7.14"]
+            ["@types/node", "npm:17.0.4"]
           ],
           "linkType": "HARD",
         }]
@@ -2683,7 +2684,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-resolve-npm-1.17.1-9a8396bef2-dc6a6df507.zip/node_modules/@types/resolve/",
           "packageDependencies": [
             ["@types/resolve", "npm:1.17.1"],
-            ["@types/node", "npm:18.7.14"]
+            ["@types/node", "npm:17.0.4"]
           ],
           "linkType": "HARD",
         }]
@@ -3984,6 +3985,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["idb-keyval", [
+        ["npm:6.2.0", {
+          "packageLocation": "./.yarn/cache/idb-keyval-npm-6.2.0-bda8041a97-ddd58f9582.zip/node_modules/idb-keyval/",
+          "packageDependencies": [
+            ["idb-keyval", "npm:6.2.0"],
+            ["safari-14-idb-fix", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["ignore", [
         ["npm:5.2.0", {
           "packageLocation": "./.yarn/cache/ignore-npm-5.2.0-fc4b58a4f3-6b1f926792.zip/node_modules/ignore/",
@@ -4319,7 +4330,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/jest-worker-npm-26.6.2-46cbcd449f-f9afa3b88e.zip/node_modules/jest-worker/",
           "packageDependencies": [
             ["jest-worker", "npm:26.6.2"],
-            ["@types/node", "npm:18.7.14"],
+            ["@types/node", "npm:17.0.4"],
             ["merge-stream", "npm:2.0.0"],
             ["supports-color", "npm:7.2.0"]
           ],
@@ -4329,7 +4340,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/jest-worker-npm-27.5.1-1c110b5894-98cd68b696.zip/node_modules/jest-worker/",
           "packageDependencies": [
             ["jest-worker", "npm:27.5.1"],
-            ["@types/node", "npm:18.7.14"],
+            ["@types/node", "npm:17.0.4"],
             ["merge-stream", "npm:2.0.0"],
             ["supports-color", "npm:8.1.1"]
           ],
@@ -5126,7 +5137,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/randombytes-npm-2.1.0-e3da76bccf-d779499376.zip/node_modules/randombytes/",
           "packageDependencies": [
             ["randombytes", "npm:2.1.0"],
-            ["safe-buffer", "npm:5.2.1"]
+            ["safe-buffer", "npm:5.1.2"]
           ],
           "linkType": "HARD",
         }]
@@ -5361,8 +5372,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["root-workspace-0b6124", "workspace:."],
-            ["@types/node", "npm:17.0.4"],
+            ["@types/node", "npm:18.7.14"],
             ["@types/react", "npm:17.0.38"],
+            ["idb-keyval", "npm:6.2.0"],
             ["next", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:12.2.5"],
             ["next-pwa", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:5.5.4"],
             ["react", "npm:17.0.2"],
@@ -5378,6 +5390,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["run-parallel", "npm:1.2.0"],
             ["queue-microtask", "npm:1.2.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["safari-14-idb-fix", [
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/safari-14-idb-fix-npm-3.0.0-bc2975407c-30d5baf3d9.zip/node_modules/safari-14-idb-fix/",
+          "packageDependencies": [
+            ["safari-14-idb-fix", "npm:3.0.0"]
           ],
           "linkType": "HARD",
         }]
