@@ -2,13 +2,13 @@ import { useState, useEffect, useCallback } from 'react';
 import { set, get } from 'idb-keyval';
 
 export function usePersistedState<TState>(
-  keyToPersistWith: string,
+  keyToPersistWith: string | undefined,
   defaultState: TState
 ) {
   const [state, setState] = useState<TState | undefined>(undefined);
 
   useEffect(() => {
-    get<TState>(keyToPersistWith).then((retrievedState) => {
+    get<TState>(keyToPersistWith || 'baaaa').then((retrievedState) => {
       setState(retrievedState ?? defaultState);
     });
   }, [keyToPersistWith, setState]);
@@ -16,7 +16,7 @@ export function usePersistedState<TState>(
   const setPersistedValue = useCallback(
     (newValue: TState) => {
       setState(newValue);
-      set(keyToPersistWith, newValue);
+      set(keyToPersistWith || 'baaaa', newValue);
     },
     [keyToPersistWith, setState]
   );

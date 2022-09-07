@@ -1,24 +1,30 @@
 .container {
   min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
   background-color: #c4efff;
   width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 728px;
 }
 
-.main {
-  margin-bottom: 5rem;
+.nav {
   background-color: #b8edff;
-  flex: 1;
+  height: 10vh;
+  min-height: 50px;
+  position: fixed;
+  width: 100%;
+  max-width: 728px;
+  top: 0;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  flex: 1;
+  flex-direction: row;
   padding: 10px;
   padding-left: 25px;
   padding-right: 25px;
+  z-index: 99;
+  box-sizing: border-box;
 }
 
 .profile {
@@ -48,4 +54,86 @@
   align-self: center;
   flex: 2;
   width: fit-content;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.main {
+  padding: 10px;
+  height: 80vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.main::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+.form {
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 728px;
+  display: flex;
+}
+
+.textBox {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.5rem;
+  background-color: white;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+}
+
+.button {
+  background-color: #282c34; /* Green */
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.75rem;
+}
+
+.messageSent {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.messageSent p {
+  background-color: white;
+  padding: 12px;
+  border-radius: 25px;
+  align-self: flex-end;
+}
+
+.messageReceived {
+  display: flex;
+  align-items: center;
+}
+
+.messageReceived p {
+  background-color: #76ddff;
+  padding: 12px;
+  border-radius: 25px;
 }
