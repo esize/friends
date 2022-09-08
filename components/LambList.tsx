@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import sheeplist from '../sheeplist';
 import styles from '../styles/Home.module.css';
+import { get } from 'idb-keyval';
 
 export default () => {
   return (
@@ -24,10 +25,7 @@ export default () => {
                 </div>
                 <div className={styles.column}>
                   <h3>{sheep.name}</h3>
-                  <p>
-                    this is the latest evany message. BAAAAAAA! Also my name is
-                    evan and i am a coder and i go click clikck click
-                  </p>
+                  <p>I'm so excited to be on woolhome! BAAA!</p>
                 </div>
               </div>
             </Link>
