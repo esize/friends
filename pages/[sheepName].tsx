@@ -8,6 +8,7 @@ import { useRef, useState } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
 import Message from '../components/Message';
 import { networkInterfaces } from 'os';
+import sheeplist from '../sheeplist';
 
 export default () => {
   const router = useRouter();
@@ -22,6 +23,7 @@ export default () => {
   };
 
   const dummy = useRef() as React.MutableRefObject<HTMLInputElement>;
+  const textInput = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   const sendMessage = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -33,9 +35,16 @@ export default () => {
       created: new Date(),
     };
 
+    const possibleResponses = sheeplist.filter(
+      (sheep) => sheep.name == sheepName
+    )[0]['responses'];
+
+    const randomResponse =
+      possibleResponses[Math.floor(Math.random() * possibleResponses.length)];
+
     const response = {
       id: uuidv4(),
-      text: 'BAAAAAAAA',
+      text: randomResponse,
       isMe: false,
       created: new Date(),
     };
@@ -44,8 +53,11 @@ export default () => {
 
     setMessages(newSetMessages);
 
+    textInput.current.blur();
     setMessageText('');
-    dummy.current.scrollIntoView({ behavior: 'smooth' });
+
+    // dummy.current.focus();
+    dummy.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
   };
 
   return (
@@ -75,19 +87,18 @@ export default () => {
             messages.map((msg: MessageType) => (
               <Message key={msg.id} text={msg.text} isMe={msg.isMe} />
             ))}
-
-          <span ref={dummy}></span>
+          <span ref={dummy} className={styles.idiot}></span>
         </main>
         <form className={styles.form} onSubmit={sendMessage}>
           <input
             type='text'
             name='message'
             id='message'
-            autoFocus
             required
             value={messageText}
             onChange={(e) => setMessageText(e.target.value)}
             className={styles.textBox}
+            ref={textInput}
           />
 
           <button type='submit' className={styles.button}>
