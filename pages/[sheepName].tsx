@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 
 import styles from '../styles/Chat.module.css';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { usePersistedState } from '../hooks/usePersistedState';
 import Message from '../components/Message';
 import { networkInterfaces } from 'os';
@@ -24,6 +24,7 @@ export default () => {
 
   const dummy = useRef() as React.MutableRefObject<HTMLInputElement>;
   const textInput = useRef() as React.MutableRefObject<HTMLInputElement>;
+  const bottomRef = useRef(null) as React.MutableRefObject<null>;
 
   const sendMessage = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -55,10 +56,11 @@ export default () => {
 
     textInput.current.blur();
     setMessageText('');
-
-    // dummy.current.focus();
-    dummy.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
   };
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   return (
     <div className={styles.container}>
@@ -82,12 +84,15 @@ export default () => {
         </div>
       </nav>
       <section className={styles.section}>
-        <main className={styles.main}>
-          {messages &&
-            messages.map((msg: MessageType) => (
-              <Message key={msg.id} text={msg.text} isMe={msg.isMe} />
-            ))}
-          <span ref={dummy} className={styles.idiot}></span>
+        <main className={styles.main} ref={dummy}>
+          <div>
+            {messages &&
+              messages.map((msg: MessageType) => (
+                <Message key={msg.id} text={msg.text} isMe={msg.isMe} />
+              ))}
+
+            <div ref={bottomRef} />
+          </div>
         </main>
         <form className={styles.form} onSubmit={sendMessage}>
           <input
