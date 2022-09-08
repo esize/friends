@@ -24,7 +24,7 @@ export default () => {
 
   const dummy = useRef() as React.MutableRefObject<HTMLInputElement>;
   const textInput = useRef() as React.MutableRefObject<HTMLInputElement>;
-  const bottomRef = useRef(null) as React.MutableRefObject<null>;
+  const bottomRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   const sendMessage = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -59,7 +59,7 @@ export default () => {
   };
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    bottomRef.current.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
   return (
