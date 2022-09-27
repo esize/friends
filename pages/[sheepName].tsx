@@ -22,8 +22,6 @@ export default () => {
     text: string;
   };
 
-  const dummy = useRef() as React.MutableRefObject<HTMLInputElement>;
-  const textInput = useRef() as React.MutableRefObject<HTMLInputElement>;
   const bottomRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   const sendMessage = (event: React.ChangeEvent<HTMLFormElement>) => {
@@ -54,7 +52,6 @@ export default () => {
 
     setMessages(newSetMessages);
 
-    textInput.current.blur();
     setMessageText('');
   };
 
@@ -64,53 +61,52 @@ export default () => {
 
   return (
     <div className={styles.container}>
-      <nav className={styles.nav}>
-        <div className={styles.link}>
-          <Link href='/' className={styles.back} passHref>
-            <a>&larr; Go Baaack</a>
-          </Link>
-        </div>
-
-        <div className={styles.profile}>
-          <div className={styles.center}>
-            <h3>{sheepName}</h3>
+      <div className={styles.sticky}>
+        <nav className={styles.nav}>
+          <div className={styles.link}>
+            <Link href='/' className={styles.back} passHref>
+              <a>&larr; Go Baaack</a>
+            </Link>
           </div>
-          <img
-            src={'/profiles/' + sheepName + '.jpg'}
-            width='35px'
-            height='35px'
-            className={styles.circle}
-          />
-        </div>
-      </nav>
-      <section className={styles.section}>
-        <main className={styles.main} ref={dummy}>
-          <div>
-            {messages &&
-              messages.map((msg: MessageType) => (
-                <Message key={msg.id} text={msg.text} isMe={msg.isMe} />
-              ))}
 
-            <div ref={bottomRef} />
+          <div className={styles.profile}>
+            <div className={styles.center}>
+              <h3>{sheepName}</h3>
+            </div>
+            <img
+              src={'/profiles/' + sheepName + '.jpg'}
+              width='35px'
+              height='35px'
+              className={styles.circle}
+            />
           </div>
-        </main>
-        <form className={styles.form} onSubmit={sendMessage}>
-          <input
-            type='text'
-            name='message'
-            id='message'
-            required
-            value={messageText}
-            onChange={(e) => setMessageText(e.target.value)}
-            className={styles.textBox}
-            ref={textInput}
-          />
+        </nav>
+      </div>
+      <main className={styles.main}>
+        <div>
+          {messages &&
+            messages.map((msg: MessageType) => (
+              <Message key={msg.id} text={msg.text} isMe={msg.isMe} />
+            ))}
 
-          <button type='submit' className={styles.button}>
-            🐑
-          </button>
-        </form>
-      </section>
+          <div ref={bottomRef} />
+        </div>
+      </main>
+      <form className={styles.form} onSubmit={sendMessage}>
+        <input
+          type='text'
+          name='message'
+          id='message'
+          required
+          value={messageText}
+          onChange={(e) => setMessageText(e.target.value)}
+          className={styles.textBox}
+        />
+
+        <button type='submit' className={styles.button}>
+          🐑
+        </button>
+      </form>
     </div>
   );
 };

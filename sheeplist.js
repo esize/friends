@@ -131,4 +131,22 @@ export default [
       'I love to have lambie snuggles!',
     ],
   },
+  {
+    name: 'Henry',
+    responses: [
+      'I love Evan!',
+      'I am a very sophisticated sheepie',
+      'I have been studying up on calculus!',
+      'Just got done with some calculus!',
+      'Ewe are such a good friend :)',
+      'I love being able to chat with ewe',
+      'When will ewe be able to visit?',
+      'How is your flock doing?',
+      'Are your lobsters still soft and cute?',
+      'I love living with Evan!',
+      'I have such a good flock!',
+      'I love my shepard Evan',
+      'I am soft and wooly',
+    ],
+  },
 ];
